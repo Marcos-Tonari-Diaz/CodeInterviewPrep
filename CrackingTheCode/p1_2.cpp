@@ -20,7 +20,7 @@ void reverse_string(char* str) {
     reverse_ptr++;
   }
   reverse_ptr--;
-  while (str < reverse_ptr) {
+  while (str < reverse_ptr) {  // until the middle point of the str
     tmp = *str;
     *str = *reverse_ptr;
     *reverse_ptr = tmp;
