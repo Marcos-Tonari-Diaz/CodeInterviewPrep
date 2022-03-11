@@ -1,3 +1,6 @@
+#ifndef NODE
+#define NODE
+
 #include <memory>
 
 using namespace std;
@@ -12,3 +15,5 @@ class Node {
   unique_ptr<Node>& getNext() { return next; }
   void setNext(unique_ptr<Node>& node) { next = move(node); }
 };
+
+#endif
