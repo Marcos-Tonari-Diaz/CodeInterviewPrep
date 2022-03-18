@@ -28,6 +28,24 @@ void remove_duplicates(SinglyLinkedList& list) {
   }
 }
 
+void remove_duplicates_nobuffer(SinglyLinkedList& list) {
+  Node* current_node = list.getHeadNode();
+  Node* compare_node = current_node;
+  while (current_node != nullptr) {
+    cout << "current " << current_node->getData() << endl;
+    while (compare_node->getNext() != nullptr) {
+      cout << "compare " << compare_node->getNext()->getData() << endl;
+      if (current_node->getData() == compare_node->getNext()->getData()) {
+        compare_node->setNext(compare_node->getNext()->getNext());
+      }
+      if (compare_node->getNext() == nullptr) return;
+      compare_node = compare_node->getNext().get();
+    }
+    current_node = current_node->getNext().get();
+    compare_node = current_node;
+  }
+}
+
 int main() {
   SinglyLinkedList list;
   list.appendToTail(1);
@@ -39,7 +57,9 @@ int main() {
   list.appendToTail(5);
   list.appendToTail(5);
   list.printList();
-  remove_duplicates(list);
+  // remove_duplicates(list);
+  cout << "new list" << endl;
+  remove_duplicates_nobuffer(list);
   list.printList();
   return 0;
 }

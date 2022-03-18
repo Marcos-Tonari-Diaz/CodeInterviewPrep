@@ -13,6 +13,7 @@ class SinglyLinkedList {
  public:
   SinglyLinkedList() : head{nullptr} {};
   Node* getHeadNode() { return head.get(); }
+  void setHeadNode(unique_ptr<Node>& node) { head = move(node); }
   void appendToTail(int data);
   void printList();
   void deleteNode(int data);

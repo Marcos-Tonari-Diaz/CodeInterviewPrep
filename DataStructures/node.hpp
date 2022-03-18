@@ -6,14 +6,14 @@
 using namespace std;
 
 class Node {
-  unique_ptr<Node> next;
+  shared_ptr<Node> next;
   int data;
 
  public:
   Node(int data) : data{data}, next{nullptr} {};
   int getData() { return data; }
-  unique_ptr<Node>& getNext() { return next; }
-  void setNext(unique_ptr<Node>& node) { next = move(node); }
+  shared_ptr<Node>& getNext() { return next; }
+  void setNext(shared_ptr<Node>& node) { next = move(node); }
 };
 
 #endif

@@ -8,11 +8,13 @@ int main() {
   list.appendToTail(4);
   list.appendToTail(5);
   list.printList();
-  list.deleteNode(3);
+  list.setHeadNode(list.getHeadNode()->getNext());
   list.printList();
-  list.deleteNode(5);
-  list.printList();
-  list.deleteNode(1);
-  list.printList();
+  // list.deleteNode(3);
+  // list.printList();
+  // list.deleteNode(5);
+  // list.printList();
+  // list.deleteNode(1);
+  // list.printList();
   return 0;
 }
