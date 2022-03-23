@@ -25,6 +25,7 @@ class StackLinkedList : public LinkedListBase {
   shared_ptr<Node> pop() {
     if (head == nullptr) return nullptr;
     shared_ptr<Node> popped_node = head;
+    // popped_node->getNext() = nullptr;
     head = move(head->getNext());
     return popped_node;
   }
